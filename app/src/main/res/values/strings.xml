@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Counter</string>
+    <string name="current_count">Current Count = </string>
+    <string name="today_count">Today\'s Count = </string>
+    <string name="lifetime_count">Lifetime\'s Count =</string>
+    <string name="click_to_start_count">Click to Start Count !</string>
+</resources>
