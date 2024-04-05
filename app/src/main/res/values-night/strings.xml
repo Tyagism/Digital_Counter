@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Counter</string>
-    <string name="current_count">Current Count = </string>
-    <string name="today_count">Today\'s Count = </string>
-    <string name="lifetime_count">Lifetime\'s Count =</string>
+    <string name="current_count">Current Count = 0</string>
+    <string name="today_count">Today\'s Count = 0</string>
+    <string name="lifetime_count">Lifetime\'s Count = 0</string>
     <string name="click_to_start_count">Click to Start Count !</string>
+    <string name="setup">Basic Setup</string>
+    <string name="please_select_your_counting_method">1. Please select your Counting Method.</string>
+    <string name="one_mala">1 Mala Complete Count</string>
+    <string name="every_beat_count">Every Beat Count</string>
+    <string name="next">Finish</string>
+    <string name="progress">Progress : 1/1 Steps</string>
+    <string name="choose_application_theme">2. Choose App Theme (Skip if Need Default).</string>
+    <string name="white">White</string>
 </resources>

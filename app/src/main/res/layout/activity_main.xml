@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
+    android:backgroundTint="#1719EA"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -74,7 +75,6 @@
         android:layout_height="600dp"
         android:text="@string/click_to_start_count"
         app:cornerRadius="1dp"
-        android:background="#7789EA"
         android:clickable="true"
         android:backgroundTint="#7789EA"
         app:layout_constraintBottom_toBottomOf="parent"
