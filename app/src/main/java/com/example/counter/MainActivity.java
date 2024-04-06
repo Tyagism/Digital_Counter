@@ -34,8 +34,9 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("com.example.counter", Context.MODE_PRIVATE);
         boolean isSwitch1On = preferences.getBoolean("switch1", false);
         TextView currentCount = findViewById(R.id.current_chip);
-        if (isSwitch1On) {
+        if  (isSwitch1On) {
             currentCount.setVisibility(View.GONE);
+
         }
 
         SharedPreferences preference = this.getSharedPreferences("com.example.counter", Context.MODE_PRIVATE);
@@ -56,25 +57,36 @@ public class MainActivity extends AppCompatActivity {
         final Chip todayChip = findViewById(R.id.today_chip);
         final Chip lifetimeChip = findViewById(R.id.lifetime_chip);
         Button button = findViewById(R.id.button);
+        Button setting = findViewById(R.id.cardvieww);
 
-            button.setOnClickListener(new View.OnClickListener() {
-                @SuppressLint("SetTextI18n")
-                @Override
-                public void onClick(View v) {
+        button.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View v) {
+                if (isSwitch1On) {
+                    todayCount++;
+                    lifetimeCount++;
+                } else {
                     NowCount++;
                     if (NowCount > 108) {
                         NowCount = 1;
                         todayCount++;
                         lifetimeCount++;
                     }
-                    currentChip.setText("Current Count: " + NowCount);
-                    todayChip.setText("Today's Count: " + todayCount);
-                    lifetimeChip.setText("Lifetime Count: " + lifetimeCount);
                 }
-
-
-
+                currentChip.setText("Current Count: " + NowCount);
+                todayChip.setText("Today's Count: " + todayCount);
+                lifetimeChip.setText("Lifetime Count: " + lifetimeCount);
+            }
         });
+
+
+    setting.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SetupActivity.class));
+        }
+    });
     }
 
 }

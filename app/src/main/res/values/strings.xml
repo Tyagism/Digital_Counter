@@ -12,4 +12,6 @@
     <string name="progress">Progress : 1/1 Steps</string>
     <string name="choose_application_theme">2. Choose App Theme (Skip for Default Theme).</string>
     <string name="white">White</string>
+    <string name="settings">Settings</string>
+    <string name="dark">Dark</string>
 </resources>

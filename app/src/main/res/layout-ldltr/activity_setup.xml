@@ -34,20 +34,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setup"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.117" />
 
     <TextView
         android:id="@+id/theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textAlignment="center"
         android:text="@string/choose_application_theme"
-        app:layout_constraintBottom_toTopOf="@+id/finishbtn"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.285"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.603" />
 
     <Button
         android:id="@+id/finishbtn"
@@ -60,14 +61,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.868" />
+        app:layout_constraintVertical_bias="0.935" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:progress="95"
+        android:progress="75"
         android:max="100"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,8 +91,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="387dp"
+        android:layout_height="67dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="25dp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"
@@ -103,6 +104,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <Space
@@ -113,7 +115,7 @@
             <Switch
                 android:id="@+id/switch1"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:fontFamily="sans-serif"
                 android:text="@string/every_beat_count"
                 android:textSize="18sp"
@@ -122,8 +124,9 @@
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:fontFamily="sans-serif"
+                android:gravity="center"
                 android:text="@string/one_mala"
                 android:textSize="18sp" />
 
@@ -137,20 +140,20 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardElevation="10dp"
+        android:layout_width="190dp"
+        android:layout_height="57dp"
         app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
         app:layout_constraintBottom_toTopOf="@+id/finishbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.6" >
+        app:layout_constraintVertical_bias="0.8">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:gravity="center"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <Space
@@ -161,19 +164,20 @@
             <Switch
                 android:id="@+id/switch2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="@string/white"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:layout_weight="1"
-                android:text="Dark "
-                android:textSize="25dp"/>
+                android:text="@string/dark"
+                android:textSize="25sp" />
 
             <Space
                 android:layout_width="10dp"

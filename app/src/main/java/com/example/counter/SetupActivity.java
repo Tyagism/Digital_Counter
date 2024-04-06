@@ -15,6 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 // SetupActivity.java
 public class SetupActivity extends AppCompatActivity {
@@ -25,7 +26,6 @@ public class SetupActivity extends AppCompatActivity {
 
         SharedPreferences preferences = getSharedPreferences("com.example.counter", Context.MODE_PRIVATE);
         if (!preferences.getBoolean("firstRun", true)) {
-            // If it's not the first run, start MainActivity and finish SetupActivity
             startActivity(new Intent(SetupActivity.this, MainActivity.class));
             finishAffinity();
             return;
@@ -33,10 +33,9 @@ public class SetupActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_setup);
 
-        // Example: Button to finish setup and go to MainActivity
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
 
-        Button finishSetup = findViewById(R.id.finishbtn);
+        Button finishbtn = findViewById(R.id.finishbtn);
         ProgressBar progressBar = findViewById(R.id.progressBar);
 
         @SuppressLint("UseSwitchCompatOrMaterialCode")
@@ -47,21 +46,46 @@ public class SetupActivity extends AppCompatActivity {
 
 
         preferences = getSharedPreferences("com.example.counter", Context.MODE_PRIVATE);
+        SharedPreferences finalPreferences1 = preferences;
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // Save the state of the switch
-                SharedPreferences.Editor editor = preferences.edit();
+                SharedPreferences.Editor editor = finalPreferences1.edit();
                 editor.putBoolean("switch1", isChecked);
+
                 editor.apply();
             }
+        });
 
-        finishSetup.setOnClickListener(new OnClickListener() {
+
+        boolean isDarkModeOn = preferences.getBoolean("darkMode", false);
+        switch2.setChecked(isDarkModeOn);
+
+        SharedPreferences finalPreferences2 = preferences;
+        switch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // Save the state of the switch and set the night mode
+                SharedPreferences.Editor editor = finalPreferences2.edit();
+                editor.putBoolean("darkMode", isChecked);
+                editor.apply();
+
+                if (isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+            }
+        });
+
+
+        SharedPreferences finalPreferences = preferences;
+        finishbtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 progressBar.setProgress(100);
 
                 // Save first run preference
-                SharedPreferences.Editor editor = preferences.edit();
+                SharedPreferences.Editor editor = finalPreferences.edit();
                 editor.putBoolean("firstRun", false);
                 editor.apply();
 
