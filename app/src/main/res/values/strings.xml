@@ -10,6 +10,6 @@
     <string name="every_beat_count">Every Beat Count</string>
     <string name="next">Finish</string>
     <string name="progress">Progress : 1/1 Steps</string>
-    <string name="choose_application_theme">2. Choose App Theme (Skip if Need Default).</string>
+    <string name="choose_application_theme">2. Choose App Theme (Skip for Default Theme).</string>
     <string name="white">White</string>
 </resources>
