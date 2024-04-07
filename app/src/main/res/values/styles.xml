@@ -5,7 +5,7 @@
     </style>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:windowBackground">@color/background_color</item>
+        <item name="android:windowBackground">#FFFFFF</item>
     </style>
 
 
@@ -16,4 +16,6 @@
         <item name="cornerSizeBottomRight">0dp</item>
         <item name="cornerSizeBottomLeft">20dp</item>
     </style>
+
+
 </resources>

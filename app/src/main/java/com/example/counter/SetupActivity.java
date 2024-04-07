@@ -28,7 +28,6 @@ public class SetupActivity extends AppCompatActivity {
             return;
         }
 
-        setContentView(R.layout.activity_setup);
 
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
 
