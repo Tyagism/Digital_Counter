@@ -9,60 +9,42 @@
     tools:context=".MainActivity">
 
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/settings"
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardElevation="5dp"
-        android:clickable="true"
-        app:cardUseCompatPadding="true"
+        android:padding="@dimen/cardview_default_elevation"
         app:layout_constraintBottom_toTopOf="@+id/current_chip"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.1"
-        app:layout_constraintStart_toEndOf="@+id/lifetime_chip"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toEndOf="@+id/scrollview"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay_card_custom_corners"
-        android:focusable="true">
+        app:layout_constraintVertical_bias="0.551">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/count_on_off"
+            tools:layout_editor_absoluteX="307dp"
+            tools:layout_editor_absoluteY="18dp" />
 
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="60sp" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="start"
-                android:layout_marginStart="4sp"
-                android:contentDescription="@string/settings"
-                app:srcCompat="@android:drawable/ic_menu_manage" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/count_on_off"
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
 
-            <Space
-                android:layout_width="5dp"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/settings"
-                android:textSize="22sp" />
-
-            <Space
-                android:layout_width="5dp"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-    </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
 
     <com.google.android.material.chip.Chip
         android:id="@+id/today_chip"
@@ -110,16 +92,29 @@
         tools:ignore="KeyboardInaccessibleWidget" />
 
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/lifetime_chip"
+    <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="18dp"
-        android:text="@string/lifetime_count"
-        app:chipCornerRadius="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/lifetime_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/lifetime_count"
+                app:chipCornerRadius="25sp"
+                tools:ignore="MissingConstraints"/>
+        </LinearLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
