@@ -16,4 +16,6 @@
     <string name="dark">Dark</string>
     <string name="method_of_count">Method Of Count</string>
     <string name="count_on_off">108 Count ON/ OFF</string>
+    <string name="history">History</string>
+    <string name="privacy_policy">Privacy Policy</string>
 </resources>
