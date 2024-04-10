@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="#1719EA"
-    tools:context=".MainActivity">
+    tools:context=".counter.MainActivity">
 
 
     <FrameLayout
@@ -90,12 +90,12 @@
         android:layout_marginBottom="58dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/buttoncount"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.123">
 
 
         <TextView
@@ -105,15 +105,17 @@
             android:gravity="center"
             android:text="@string/history"
             android:textSize="20sp" />
+
+
     </LinearLayout>
 
     <ScrollView
         android:id="@+id/scrol"
-        android:layout_width="250dp"
+        android:layout_width="240dp"
         android:layout_height="100dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="112dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintHorizontal_bias="0.982"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -151,6 +153,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.224" />
 
+
     <Button
         android:id="@+id/buttoncount"
         android:layout_width="match_parent"
@@ -162,12 +165,11 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/current_chip"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="KeyboardInaccessibleWidget" />
-
 
     <com.google.android.material.chip.Chip
         android:id="@+id/lifetime_chip"
@@ -180,11 +182,11 @@
         android:text="@string/lifetime_count"
         app:chipCornerRadius="25sp"
         app:layout_constraintBottom_toTopOf="@+id/today_chip"
-        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
-        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.875"
         tools:ignore="MissingConstraints" />
 
 
